@@ -27,5 +27,13 @@ class Student
         result = SqlRunner.run(sql)
         return self.map_items(result)
     end
+
+    def self.delete_all()
+        sql = "DELETE FROM students"
+        SqlRunner.run(sql)
+    end
+
+
+
     
 end
