@@ -5,30 +5,6 @@ require_relative('../models/house')
 House.delete_all()
 Student.delete_all()
 
-student1 = Student.new({
-    'first_name' => 'Harry',
-    'last_name' => 'Potter',
-    'house' => 'Gryffindor',
-    'age' => "12"
-})
-student1.save()
-
-student2 = Student.new({
-    'first_name' => 'Hermione',
-    'last_name' => 'Granger',
-    'house' => 'Gryffindor',
-    'age' => "13"
-})
-student2.save()
-
-student3 = Student.new({
-    'first_name' => 'Draco',
-    'last_name' => 'Malfoy',
-    'house' => 'Slytherin',
-    'age' => "14"
-})
-student3.save()
-
 house1 = House.new({
     'name' => 'Gryffindor',
     'logo' => 'https://p1.hiclipart.com/preview/542/343/666/harry-potter-gryffindor-logo-thumbnail.jpg'
@@ -52,6 +28,31 @@ house4 = House.new({
     'logo' => 'https://p7.hiclipart.com/preview/546/868/914/slytherin-house-hogwarts-harry-potter-gryffindor-ravenclaw-house-harry-potter-thumbnail.jpg'
 })
 house4.save()
+
+student1 = Student.new({
+    'first_name' => 'Harry',
+    'last_name' => 'Potter',
+    'house' => house1.id,
+    'age' => "12"
+})
+student1.save()
+
+student2 = Student.new({
+    'first_name' => 'Hermione',
+    'last_name' => 'Granger',
+    'house' => house1.id,
+    'age' => "13"
+})
+student2.save()
+
+student3 = Student.new({
+    'first_name' => 'Draco',
+    'last_name' => 'Malfoy',
+    'house' => house4.id,
+    'age' => "14"
+})
+student3.save()
+
 
 
 binding.pry

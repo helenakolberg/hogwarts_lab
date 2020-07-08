@@ -11,6 +11,6 @@ CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
-    house_id INT REFERENCES houses(id),
+    house INT REFERENCES houses(id),
     age INT
 );
